@@ -1,4 +1,4 @@
-{% extends "blog/bast.html" %}
+{% extends "blog/base.html" %}
 
 {% block title %}
     <title>Blog</title>
@@ -17,7 +17,9 @@
             {% endif %}
             <div class="card-body">
                 <h2 class="card-title">{{ p.title }}</h2>
-                <p class="card-text">{{ p.content | truncatewords:30 }}</p>
+                {% if p.hook %}
+                    <p class="card-text">{{ p.hook | truncatewords:15 }}</p>
+                {% endif %}
                 <a href="{{ p.get_absolute_url }}" class="btn btn-primary">Read More &rarr;</a>
             </div>
             <div class="card-footer text-muted">

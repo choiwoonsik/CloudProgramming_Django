@@ -1,14 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+{% extends 'blog/base.html' %}
+
+{% block title %}
     <title>자기소개</title>
-</head>
+{% endblock %}
+
+{% block main_area %}
+
 <body>
-    <nav>
-        <a href="/">대문</a>
-        <a href="/blog/">BLOG</a>
-    </nav>
-    <h1>공사중</h1>
+    <h1>개발일기장</h1>
+
+    <div>
+        안녕하세요. 웹 백엔드 개발자 최운식입니다.
+    </div>
+    <br>
+
+    <h3>학력</h3>
+    <ol>
+        <li>2016.03 ~ 상명대학교 컴퓨터과학과 재학 중</li>
+        <li>2011.03 ~ 2014.02 평촌고등학교 졸업</li>
+    </ol>
+    <br>
+
+    <h3>프로젝트 경험</h3>
+    <ol>
+        <li>코디네이터 플랫폼 프로젝트</li>
+    </ol>
 </body>
-</html>
+
+{% endblock %}
