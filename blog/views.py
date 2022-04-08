@@ -51,7 +51,7 @@ def show_tag_posts(request, slug):
 
     context = {
         'categories': Category.objects.all(),
-        'no_tag_post_count': Post.objects.filter(category=None).count(),
+        'no_category_post_count': Post.objects.filter(category=None).count(),
         'tag': tag,
         'post_list': post_list
     }
