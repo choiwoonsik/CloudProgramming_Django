@@ -52,6 +52,14 @@
             <br/>
         {% endif %}
 
+        {% if user.is_authenticated %}
+            {% if user.is_staff or user.is_superuser %}
+                {% if post.author.pk == user.pk %}
+                    <a href="/blog/update_post/{{ post.pk }}" role="button">수정하기</a>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+
         <!-- Comments Form -->
         <div class="card my-4">
             <h5 class="card-header">Leave a Comment:</h5>
