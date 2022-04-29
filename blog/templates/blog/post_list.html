@@ -29,6 +29,8 @@
                 <h2 class="card-title">{{ post.title }}</h2>
                 {% if post.hook %}
                     <p class="card-text">{{ post.hook | truncatewords:15 }}</p>
+                {% else %}
+                    <p class="card-text">{{ post.get_markdown_content | truncatewords_html:45 | safe }}</p>
                 {% endif %}
                 <a href="{{ post.get_absolute_url }}" class="btn btn-primary">Read More &rarr;</a>
 

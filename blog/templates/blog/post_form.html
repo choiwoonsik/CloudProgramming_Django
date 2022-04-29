@@ -1,4 +1,6 @@
 {% extends 'blog/base.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
 
 {% block title %}
     <title>Create post - blog</title>
@@ -8,12 +10,12 @@
     <h1>CREATE POST</h1>
     <hr/>
 
-    {{ request }}
-
     <form method="post" enctype="multipart/form-data">{% csrf_token %}
         <table>
-            {{ form }}
+            {{ form | crispy }}
         </table>
     <button type="submit" class="btn btn-primary float-right">Submit</button>
     </form>
+
+    {{ form.media }}
 {% endblock %}
