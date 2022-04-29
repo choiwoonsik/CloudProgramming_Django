@@ -67,7 +67,7 @@ class Comment(models.Model):
     modified_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.author}::{{self.content}}'
+        return f'{self.author}::{self.pk}'
 
     def get_absolute_url(self):
         return f'{self.post.get_absolute_url()}#comment-{self.pk}'

@@ -10,4 +10,11 @@
     <h1>안녕하세요</h1>
 </body>
 
+    <body>
+        {% for post in recent_post %}
+            <p>{{ post.title }} - {{ post.content | truncatewords_html:30 }}</p>
+        {% endfor %}
+
+    </body>
+
 {% endblock %}
