@@ -1,7 +1,7 @@
 ---
 applications:
-  - name: django-blog-app
+  - name: django-blog-app-woonsik2
     buildpack: python_buildpack
     memory: 1G
     instances: 1
-    command: python manage.py runserver 8080
+    command: waitress-serve --port=8080 django_blog_prj.wsgi:application
