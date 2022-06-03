@@ -36,6 +36,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 
     'crispy_forms',
     'markdownx',
@@ -85,7 +90,7 @@ WSGI_APPLICATION = 'django_blog_prj.wsgi.application'
 #     }
 # }
 
-LOCAL_SQLITE = 'sqlite:///'+os.path.abspath(os.path.join(BASE_DIR, 'db.sqlite3'))
+LOCAL_SQLITE = 'sqlite:///' + os.path.abspath(os.path.join(BASE_DIR, 'db.sqlite3'))
 DATABASES = {}
 DATABASES['default'] = dj_database_url.config(default=LOCAL_SQLITE)
 
